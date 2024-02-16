@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background: #000 url(../../public/images/main-bg.webp);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.pagination_wrap {
+  @apply flex justify-end text-white space-x-3 my-5;
+
+  li {
+    @apply text-white py-1 px-3 rounded;
+
+    &.disabled {
+      @apply text-gray-400;
+
+      a {
+        @apply cursor-default
+      }
+    }
+
+    &.active {
+      @apply bg-red-500;
+    }
+  }
+}
